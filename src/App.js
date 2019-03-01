@@ -65,9 +65,9 @@ class App extends Component {
 
 
         return (
-            <div class="container-fluid" style={{ height: '100%', width: '100%', paddingTop: 20, backgroundColor: 'white' }}>
+            <div class="container-fluid" style={{ height: '100%', width: '100%', paddingTop:0, backgroundColor: 'white' }}>
                 {!this.canvLoaded &&
-                    <canvas ref="canvas" style={{ display: 'none' }}>
+                    <canvas ref="canvas" style={{ display: 'flex' }}>
                     </canvas>}
 
                 <PDFExport paperSize={'a4'}
@@ -78,13 +78,16 @@ class App extends Component {
                     keywords=""
                     ref={(r) => this.resume = r}>
 
-                    <div  style={{height:"900px"}}>
+
+                    {/* All the Component to be converted into PDF will be placed inside <PDFExport></PDFExport> Tags */}
+
+                    <div >
 
                         <main className={classes.main}>
 
 
 
-                            <Typography variant="h1" align="center" color="white">
+                            <Typography variant="h1" align="center" >
                                 Log In</Typography>
 
                             <CssBaseline />
