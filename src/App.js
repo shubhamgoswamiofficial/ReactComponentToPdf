@@ -11,44 +11,6 @@ import PropTypes from 'prop-types';
 class App extends Component {
     resume;
 
-    constructor() {
-        super();
-        // this.iconsToConvert = [
-        //     {
-        //         icon: faGithub,
-        //         alt: 'github icon'
-        //     },
-        //     {
-        //         icon: faMedium,
-        //         alt: 'medium icon'
-        //     }
-        // ]
-        this.canvLoaded = false;
-    }
-
-    exportPDF = () => {
-        this.resume.save();
-    }
-
-    convertSvgToImage = (arr) => {
-        let canv = this.refs.canvas;
-        if (!this.canvLoaded) {
-            this.canvLoaded = true;
-            canv.getContext("2d");
-            // arr.forEach((d, i) => {
-            //     let htmlString = ReactDOMServer.renderToStaticMarkup(
-            //         <FontAwesomeIcon icon={d.icon} size={"3x"} style={{ color: '#005696', height: '500px', width: '500px' }} />
-            //     );
-            //     canvg(canv, htmlString);
-            //     d.icon = canv.toDataURL("image/png");
-            // });
-            this.setState({});
-        }
-    }
-
-    componentDidMount() {
-        this.convertSvgToImage(this.iconsToConvert);
-    }
 
     render() {
 
@@ -58,10 +20,7 @@ class App extends Component {
 
         return (
             <div class="container-fluid" style={{ height: '100%', width: '100%', paddingTop:0, backgroundColor: 'white' }}>
-                {!this.canvLoaded &&
-                    <canvas ref="canvas" style={{ display: 'flex' }}>
-                    </canvas>}
-
+               
                 <PDFExport paperSize={'a4'}
                 
                     fileName="Output.pdf"
@@ -123,7 +82,7 @@ class App extends Component {
                 </PDFExport>
 
                 <div style={{ textAlign: 'center', marginBottom: 10 }}>
-                    <button type="button" class="btn btn-primary" variant="primary" onClick={this.exportPDF} style={{ margin: 'auto' }}>download</button>
+                    <button type="button" class="btn btn-primary" variant="primary" onClick={() => { this.resume.save(); }} style={{ margin: 'auto' }}>download</button>
                 </div>
 
             </div>
