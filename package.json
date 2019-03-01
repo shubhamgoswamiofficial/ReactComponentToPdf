@@ -3,9 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@progress/kendo-drawing": "^1.5.8",
+    "@progress/kendo-react-pdf": "^2.7.1",
+    "@react-pdf/renderer": "^1.4.0",
+    "bootstrap": "^4.3.1",
+    "canvg": "^1.5.3",
+    "file-saver": "^2.0.1",
+    "jspdf": "^1.5.3",
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
+    "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/react-fontawesome": "^0.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
